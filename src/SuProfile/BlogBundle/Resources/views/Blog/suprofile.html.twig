@@ -1,0 +1,352 @@
+{% block SuProfileblog_body %}
+{% if suprofile.image is not null %}
+	<img src="{{ asset(suprofile.image.webPath) }}" class="photo" alt="{{ suprofile.image.alt }}"/>
+{% endif %}
+<h4>SuProfile</h4></br>
+{% if suprofile.nom is not null %}
+	<span class="coloration">Nom :</span> {{ suprofile.nom}}</br></br>
+{% endif %}
+{% if suprofile.prenom is not null %}
+	<span class="coloration">Prénom :</span> {{ suprofile.prenom}}</br></br>
+{% endif %}
+{% if suprofile.adresse is not null %}
+	<span class="coloration">Adresse :</span> {{ suprofile.adresse}}</br></br>
+{% endif %}
+{% if suprofile.classe is not null %}
+	<span class="coloration">Classe :</span> {{ suprofile.classe}}</br></br>
+{% endif %}
+{% if suprofile.formations is not null %}
+	<span class="coloration">Formations :</span> {{ suprofile.formations}}</br></br>
+{% endif %}
+{% if suprofile.competences is not null %}
+	<span class="coloration">Compétences :</span> {{ suprofile.competences}}</br></br>
+{% endif %}
+{% if suprofile.experiences is not null %}
+	<span class="coloration">Expériences :</span> {{ suprofile.experiences}}</br></br>
+{% endif %}
+
+<div class="centre coloration">Mes notes :</div></br>
+
+<table class="table table-bordered table-striped">
+	<tr>
+		<th><span class="coloration">Matières</span></th>
+		<th><span class="coloration">B1</span></th>
+		<th><span class="coloration">B2</span></th>
+		<th><span class="coloration">B3</span></th>
+		<th><span class="coloration">M1</span></th>
+		<th><span class="coloration">M2</span></th>
+	</tr>
+	<tr>
+		<td><span class="coloration">Agile and Scrum</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M1.MET}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Anglais</span></td>
+		<td>{{ suprofile.B1.ENG}}</td>
+		<td>{{ suprofile.B2.ENG}}</td>
+		<td>{{ suprofile.B3.ENG}}</td>
+		<td>{{ suprofile.M1.ENG}}</td>
+		<td>{{ suprofile.M2.ENG}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Assembleur</span></td>
+		<td>{{ suprofile.B1.CPA}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">BI</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M1.BIS}}</td>
+		<td>{{ suprofile.M2.BIS}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">C/C++/UML</span></td>
+		<td>{{ suprofile.B1.ADS}}</td>
+		<td>{{ suprofile.B2.ADS}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">C#</span></td>
+		<td>-</td>
+		<td>{{ suprofile.B2.NET}}</td>
+		<td>{{ suprofile.B3.NET}}</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">CobiT</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M2.MET}}</span></td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Cocoa</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.B3.APL}}</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Compilation</span></td>
+		<td>-</td>
+		<td>{{ suprofile.B2.CMP}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Cryptographie</span></td>
+		<td>{{ suprofile.B1.ARI}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Data Management</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M2.DAT}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Droit</span></td>
+		<td>{{ suprofile.B1.LAW}}</td>
+		<td>{{ suprofile.B2.LAW}}</td>
+		<td>{{ suprofile.B3.LAW}}</td>
+		<td>{{ suprofile.M1.LAW}}</td>
+		<td>{{ suprofile.M2.LAW}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Engineer Best Practices</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M2.EBP}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Entrepreneurship</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M2.EPS}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">ERP</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M1.ERP}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Intelligence artificielle</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.B3.AIT}}</td>
+		<td>{{ suprofile.M1.AIT}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">ITIL</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.B3.MET}}</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Java</span></td>
+		<td>-</td>
+		<td>{{ suprofile.B2.JVA}}</td>
+		<td>{{ suprofile.B3.JVA}}</td>
+		<td>{{ suprofile.M1.JVA}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Linux</span></td>
+		<td>{{ suprofile.B1.LIN}}</td>
+		<td>{{ suprofile.B2.LIN}}</td>
+		<td>{{ suprofile.B3.LIN}}</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Management</span></td>
+		<td>{{ suprofile.B1.MGT}}</td>
+		<td>{{ suprofile.B2.MGT}}</td>
+		<td>{{ suprofile.B3.MGT}}</td>
+		<td>{{ suprofile.M1.MGT}}</td>
+		<td>{{ suprofile.M2.MGT}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Maths</span></td>
+		<td>{{ suprofile.B1.MAT}}</td>
+		<td>{{ suprofile.B2.GRA}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Merise</span></td>
+		<td>{{ suprofile.B1.MER}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Microsoft Exchange Server</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M1.MSE}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Microsoft SharePoint Server</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M1.MOS}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Microsoft Technologies</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M1.NET}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">OSS</span></td>
+		<td>{{ suprofile.B1.OSS}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Projet Dev</span></td>
+		<td>{{ suprofile.B1.DEV}}</td>
+		<td>{{ suprofile.B2.DEV}}</td>
+		<td>{{ suprofile.B3.DEV}}</td>
+		<td>{{ suprofile.M1.DEV}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Projet Architecture</span></td>
+		<td>{{ suprofile.B1.ARC}}</td>
+		<td>-</td>
+		<td>{{ suprofile.B3.ARC}}</td>
+		<td>{{ suprofile.M1.ARC}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Projet Web Dev</span></td>
+		<td>-</td>
+		<td>{{ suprofile.B2.DWB}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Réseau</span></td>
+		<td>{{ suprofile.B1.CCNA}}</td>
+		<td>{{ suprofile.B2.CNS}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">SQL</span></td>
+		<td>{{ suprofile.B1.ORC}}</td>
+		<td>{{ suprofile.B2.ORC}}</td>
+		<td>{{ suprofile.B3.ORC}}</td>
+		<td>-</td>
+		<td>{{ suprofile.M2.ORC}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Security</span></td>
+		<td>{{ suprofile.B1.SEC}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Serveur Windows</span></td>
+		<td>-</td>
+		<td>{{ suprofile.B2.MSA}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Statistiques</span></td>
+		<td>-</td>
+		<td>{{ suprofile.B2.PBS}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Virtualization and IS Urbanization</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M1.VTZ}}</td>
+		<td>{{ suprofile.M2.VTZ}}</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">VoIP</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.M1.VIP}}</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Web</span></td>
+		<td>{{ suprofile.B1.WEB}}</td>
+		<td>{{ suprofile.B2.WEB}}</td>
+		<td>{{ suprofile.B3.WEB}}</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Web Strategy</span></td>
+		<td>{{ suprofile.B1.JWB}}</td>
+		<td>{{ suprofile.B2.JWB}}</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td><span class="coloration">Windows Active Directory</span></td>
+		<td>-</td>
+		<td>-</td>
+		<td>{{ suprofile.B3.MSD}}</td>
+		<td>-</td>
+		<td>-</td>
+	</tr>
+</table>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "SuProfileBlogBundle::layout.html.twig" %}
+ 
+{% block title %}
+	Modifier mon Suprofile - {{ parent() }}
+{% endblock %}
+ 
+{% block SuProfileblog_body %}
+	<div class="border">
+		<h3>Modifier mon Suprofile</h3>
+	
+		{% include "SuProfileBlogBundle:Blog:formulaire.html.twig" %}
+	</div>
+{% endblock %}

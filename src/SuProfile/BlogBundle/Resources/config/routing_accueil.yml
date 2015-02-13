@@ -1,0 +1,34 @@
+SuProfileblog_accueil:
+    pattern:   /
+    defaults:  { _controller: SuProfileBlogBundle:Blog:index }
+    requirements:
+        page:  \d+
+
+SuProfileblog_cate:
+    pattern:   /{cate}/{page}
+    defaults:  { _controller: SuProfileBlogBundle:Blog:cate, page: 1 }
+    requirements:
+        cate: B1|B2|B3|M1|M2|communaute
+        page:  \d+
+
+SuProfileblog_dl:
+    pattern:  /dl/{page}
+    defaults: { _controller: SuProfileBlogBundle:Blog:dl, page: 1 }
+    requirements: 
+        page: \d+
+
+SuProfileblog_monSuprofile:
+    pattern:  /mon-suprofile/{page}
+    defaults: { _controller: SuProfileBlogBundle:Blog:monSuprofile, page: 1 }
+
+SuProfileblog_suprofile:
+    pattern:  /suprofile/{id}/{page}
+    defaults: { _controller: SuProfileBlogBundle:Blog:suprofile, page: 1 }
+    requirements:
+        id: \d+
+
+SuProfileblog_download:
+    pattern:  /download/{id}
+    defaults: { _controller: SuProfileBlogBundle:Blog:download }
+    requirements:
+        id: \d+

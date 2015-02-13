@@ -1,0 +1,31 @@
+{% extends "SuProfileBlogBundle::layout.html.twig" %}
+
+{% block title %}
+	Mon {{ parent() }}
+{% endblock %}
+
+{% block SuProfileblog_body %}
+ <ul>
+    {% for suprofile in suprofiles %}
+		<div class="border-article">
+			<h3>Gérer mon SuProfile</h3></br>
+			<div class="span4">
+				<a href="{{ path('SuProfileblog_suprofile', {'id': userId}) }}" class="btn btn-primary btn-block">Mon SuProfile</a>
+			</div>
+			<div class="span4">
+				<a href="{{ path('SuProfileblog_modifierSuprofile', {'id': suprofile.id}) }}" class="btn btn-primary btn-block">Modifier mon SuProfile</a>
+			</div></br></br></br>
+			{% include "SuProfileBlogBundle:Blog:suprofile.html.twig"%}
+		</div>
+	{% else %}
+		<div class="border-article">
+			<h3>Mon SuProfile</h3></br>
+			<div class="centre">
+				<p><a href="{{ path('SuProfileblog_ajouterSuprofile') }}"class="btn"><i class="icon-edit"></i>Créer mon Suprofile</a></p>
+			</div>
+		</div>
+    {% endfor %}
+</ul>
+				
+
+{% endblock %}

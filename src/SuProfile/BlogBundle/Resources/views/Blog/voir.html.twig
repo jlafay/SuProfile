@@ -1,0 +1,35 @@
+{% extends "SuProfileBlogBundle::layout.html.twig" %}
+ 
+{% block title %}
+	{{ parent() }}
+{% endblock %}
+ 
+{% block SuProfileblog_body %}
+	<div class="border">
+		{% include "SuProfileBlogBundle:Blog:article.html.twig"%}
+		<div class="centre"><p>
+		{% if is_granted('ROLE_ADMIN') %}
+			<a href="{{ path('SuProfileblog_modifier', {'id': article.id}) }}" class="btn"><i class="icon-edit"></i>Modifier la publication</a>
+		{% endif %}
+		{% if article.user == currentUser %}
+			<a href="{{ path('SuProfileblog_modifier', {'id': article.id}) }}" class="btn"><i class="icon-edit"></i>Modifier la publication</a>
+		{% endif %}
+		{% if is_granted('ROLE_ADMIN') %}
+			<a href="{{ path('SuProfileblog_supprimer', {'id': article.id}) }}" class="btn"><i class="icon-trash"></i>Supprimer la publication</a>
+		{% endif %}
+		{% if article.user == currentUser %}
+			<a href="{{ path('SuProfileblog_supprimer', {'id': article.id}) }}" class="btn"><i class="icon-trash"></i>Supprimer la publication</a>
+		{% endif %}
+		</p></div></br>
+  
+		<h3>Commentaires</h3>
+
+		{% for commentaire in commentaires %}
+			{% include "SuProfileBlogBundle:Blog:commentaire.html.twig" %}
+		{% endfor %}
+		
+		<form method="post" action="{{ path('SuProfileblog_ajouter_commentaire', {'id': article.id}) }}">{{ form_widget(form) }}
+			<input type="submit" value="Ajouter" class="btn btn-primary" />
+		</form>
+	</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+SuProfileblog_ajouter:
+    pattern:   /ajouter
+    defaults:  { _controller: SuProfileBlogBundle:Blog:ajouter }
+
+SuProfileblog_ajouterdl:
+    pattern:  /ajouter-dl
+    defaults:  { _controller: SuProfileBlogBundle:Blog:ajouterDl }
+
+SuProfileblog_ajouterSuprofile:
+    pattern:  /ajouter-suprofile
+    defaults: { _controller: SuProfileBlogBundle:Blog:ajouterSuprofile }
+
+SuProfileblog_voir:
+    pattern:   /{slug}
+    defaults:  { _controller: SuProfileBlogBundle:Blog:voir }
+
+SuProfileblog_modifier:
+    pattern:   /modifier/{id}
+    defaults:  { _controller: SuProfileBlogBundle:Blog:modifier }
+    requirements:
+        id:  \d+
+
+SuProfileblog_modifierSuprofile:
+    pattern:   /modifier-suprofile/{id}
+    defaults:  { _controller: SuProfileBlogBundle:Blog:modifierSuprofile }
+    requirements:
+        id:  \d+
+
+SuProfileblog_supprimer:
+    pattern:   /supprimer/{id}
+    defaults:  { _controller: SuProfileBlogBundle:Blog:supprimer }
+    requirements:
+        id:  \d+
+
+SuProfileblog_ajouter_commentaire:
+    pattern:  /ajouter/{id}/commentaire
+    defaults: { _controller: SuProfileBlogBundle:Blog:ajouterCommentaire }
+    methods:  POST
+    requirements:
+        id:      \d+
+
+SuProfileblog_supprimer_commentaire:
+    pattern:   /supprimer/commentaire/{id}
+    defaults:  { _controller: SuProfileBlogBundle:Blog:supprimerCommentaire }
+    requirements:
+        id:  \d+

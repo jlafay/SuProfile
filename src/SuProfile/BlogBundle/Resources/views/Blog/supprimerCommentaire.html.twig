@@ -1,0 +1,23 @@
+{% extends "SuProfileBlogBundle::layout.html.twig" %}
+
+{% block title %}
+	Supprimer le commentaire - {{ parent() }}
+{% endblock %}
+
+{% block SuProfileblog_body %}
+
+	<h2>Supprimer le commentaire</h2>
+
+	<p>
+		Etes-vous certain de vouloir supprimer le commentaire suivant ?
+	</p>
+	<div class="well">
+		{{ commentaire.contenu|markdown }}
+	</div>
+
+	<form action="{{ path('SuProfileblog_supprimer_commentaire', {'id': commentaire.id}) }}" method="post">
+		<a href="{{ path('SuProfileblog_voir', {'slug': commentaire.article.slug}) }}" class="btn"><i class="icon-chevron-left"></i>Retour à l'image</a>
+		<input type="submit" value="Supprimer" class="btn btn-danger" />{{ form_rest(form) }}
+	</form>
+
+{% endblock %}

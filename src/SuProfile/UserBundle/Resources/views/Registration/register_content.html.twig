@@ -1,0 +1,39 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{% block title %}SuProfile{% endblock %}</title>
+ 
+		{% block stylesheets %}
+		<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+		<link rel="stylesheet" href="{{ asset('css/tuto1.css') }}" type="text/css" />
+		{% endblock %}
+
+	</head>
+	<body>
+		<div class="container">
+			<div id="header" class="hero-unit">
+				<h1><img src="{{ asset('img/logo_supinfo_0063AF.png') }}" alt="Logo de SUPINFO" />SuProfile</h1>
+				<p>Créez et partagez votre SuProfile !</br>
+				Uploadez vos fichiers et contribuez à la SupDownload !</br>
+				Rendez service à votre classe et à la communauté en  publiant dans la SupActuality !</p>
+			</div>
+			<hr/>
+			<fieldset class="fieldset">
+				<legend>Register</legend> 
+				<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+					{{ form_widget(form) }}
+					<div><input type="submit" value="{{ 'registration.submit'|trans }}" /></div></br>
+					Déjà inscrit ? <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+				</form>
+			</fieldset>
+		</div>
+	</body>
+	<footer>
+		<div class="span12">
+			<hr class="line"/>
+			<p>&copy;2013 SuProfile - A project developped by <a href="http://www.supinfo.com/">SUPINFO International University</a>.</p>
+		</div>
+	</footer>
+</html>
+		

@@ -1,0 +1,9 @@
+{% extends "::layoutSuprofile.html.twig" %}
+
+{% block body %}
+	{% for suprofile in suprofiles %}
+		<div class="border">
+			{% include "SuProfileBlogBundle:Blog:suprofile.html.twig" %}
+		</div>
+	{% endfor %}
+{% endblock %}

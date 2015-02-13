@@ -1,0 +1,26 @@
+{% set accueil = accueil|default(false) %}
+
+{% if accueil %}
+	<h3><a href="{{ path('SuProfileblog_voir', {'slug': article.slug} ) }}">{{ article.titre }}</a></h3>
+	<div class="centre"><i>Par {{ article.user}}, le {{ article.date|date('d/m/Y') }}.</i></div></br>
+{% else %}
+	<h3>{{ article.titre }}</h3>
+	<div class="centre"><i>Par {{ article.user}}, le {{ article.date|date('d/m/Y') }}.</i></div></br>
+	{% if article.fichier is not null %}
+		<div class="centre"><a class="btn btn-primary" href="{{ path('SuProfileblog_download', {'id': fichier.id}) }}">Télécharger &raquo; {{ fichier.alt }}</a></div></br>
+	{% endif %}
+	{% if article.image is not null %}
+		<div class="centre"><img src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}"/></div></br>
+	{% endif %}
+	{% if article.video is not null %}
+		<div class="centre"><a href="{{ article.video }}"></a></div></br>
+	{% endif %}
+	{% if article.contenu is not null %}
+		<div class="well" itemprop="articleBody">
+			{{ article.contenu|markdown }}
+		</div>
+	{% endif %}
+{% endif %}
+
+
+

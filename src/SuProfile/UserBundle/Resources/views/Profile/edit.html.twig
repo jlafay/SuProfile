@@ -1,0 +1,8 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+<div class="border centre">
+	<h3>Mon compte</h3></br>
+	{% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+</div>
+{% endblock fos_user_content %}
